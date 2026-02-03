@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+}
+.icones img{
+    margin-top: -9px;
+    height: 40px;
+    width: 40px;
+}
+.icones{
+
+    border-radius: 30%x;
+    margin: 30px;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(255, 174, 0);
+}
+.icones :hover{
+    background-color: rgb(255, 174, 0);
+}
+.iconeoakley img{
+    margin-top:-9px ;
+    height: 100px;
+    width: 100px;
+}
+.iconeoakley{
+    height: 100px;
+    width: 100px;
+    
+}
+
+
+#containertop{
+    display: flex;
+    justify-content: space-between;
+}
+header{
+    background-color:  rgb(255, 174, 0) ;
+    height: 75px;
+
+}
+
+
+
+
+/* bodyy*/
+
+
+
+
+body{
+  background-image: url("Submundo-e-Podpah-se-unem-em-festa-que-celebra-o-funk-e-a-cultura-periferica-photoaidcom-darken.webp");
+  background-size: cover;        
+  background-repeat: no-repeat;  
+  background-position: center; 
+  height: 100dvh;
+  background-color: black;
+
+}
+#lupa img{
+    height: 90%;
+    width: 90%;
+}
+#lupa{
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2%;
+}
+#quadrado{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 500px;
+    width: 400px ;
+    background-color:  rgb(255, 174, 0);
+    border-radius: 2%;
+}
+#container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+
+.texto{
+display: flex;
+flex-direction: column;
+}
+
+.textoreal{
+font-weight:900;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-shadow: 0 7 2px black;
+}

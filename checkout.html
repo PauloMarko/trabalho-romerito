@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="checkout.css">
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <div id="containertop">
+            <div class="iconeoakley" >
+                <img src="img/pngwing.com.png" alt="">
+            </div>
+            <div class="checkoutlabel">
+                <span class="material-symbols-outlined">lock</span>
+                <span>pagamento</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <div id="header1">
+                <h1 >Insira os dados para proseguir a compra</h1>
+                <span>( * ) Dados obrigatórios</span>
+            </div>
+            <div class="form1">
+                <form action="">
+                    <div id="email" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="email">Endereço de e-mail *</label>
+                        <span id="email-erro"></span>
+                    </div>
+                    <div id="nome" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="nome">Nome completo *</label>
+                        <span id="nome-erro"></span>
+                    </div>
+                    <div id="cpf" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="cpf-cnpj">CPF ou CNPJ *</label>
+                        <span id="cpf-erro"></span>
+                    </div>
+                    <div id="telefone" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="telefone">Número de telefone *</label>
+                        <span id="telefone-erro"></span>
+                    </div>
+                    <span id="telefone-info">( i ) Utilizaremos somente se exitirem problemas no seu pedido</span>
+                    <div id="cep" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="cep">CEP *</label>
+                        <span id=cep-erro"></span>
+                    </div>
+                    <div id="endereco" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="endereco">Endereço *</label>
+                        <span id=endereco-erro"></span>
+                    </div>
+                    <div id="numero" class="input-group">
+                        <input type="text" placeholder="" required> 
+                        <label for="numero">Número *</label>
+                        <span id=numero-erro"></span>
+                    </div>
+                    <div id="complemento" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="complemento">Complemento</label>
+                        <span id=complemento-erro"></span>
+                    </div>
+                    <div id="bairro" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="bairro">Bairro *</label>
+                        <span id=bairro-erro"></span>
+                    </div>
+                    <div id="estado" class="input-group">
+                        <input type="text" placeholder=" " required>
+                        <label for="estado">Estado *</label>
+                        <span id=bairro-erro"></span>
+                    </div>
+                    <div id="cidade" class="input-group">
+                        <input type="text" placeholder="" required>
+                        <label for="cidade">Cidade *</label>
+                        <span id=cidade-erro"></span>
+                    </div>
+                    <div id="checkboxes">
+                        <input type="checkbox" name="checkbox1"> Utilizar dados como meu endereço de faturamento
+                        <input type="checkbox" name="checkbox2"> Aceito os <b>Termos e Condições de Uso do site</b>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="container2">
+            <div class="itens2">
+                <h3>Total</h3>
+                <span>Subtotal</span>
+                <span id="valor-subtotal"></span>
+                <span>Frete</span> 
+                <span id="valor-frete"></span>   
+                              
+            </div>
+        </section>
+    </main>
+</body>
+</html>
