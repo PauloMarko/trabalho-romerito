@@ -13,6 +13,7 @@
 .iconeoakley{
     height: 100px;
     width: 100px;
+    margin-top: -2px;
     
 }
 
@@ -25,7 +26,15 @@
 #containertop{
     display: flex;
     justify-content: flex-start;
-    gap: 40px;
+    gap: 15px;
+}
+
+#btn-voltar span {
+    font-size: 45px;
+    padding-top: 16px;
+    padding-left: 25px;
+    text-decoration: none;
+    color: black;
 }
 
 header{
@@ -226,10 +235,16 @@ main {
         align-items: flex-start;
     }
 
+    #btn-voltar span {
+        font-size: 45px;
+        padding-top: 1px;
+        padding-left: 20px;
+    }
+
     .iconeoakley img {
         height: 60px;
         width: 60px;
-        margin-top: 0;
+        margin-top: -6px;
         padding-left: 10px;
     }
 
@@ -307,9 +322,15 @@ main {
         padding: 8px;
     }
 
+    #btn-voltar span {
+        font-size: 45px;
+        padding-top: 1px;
+        padding-left: 4px;
+    }
+
     .iconeoakley img {
-        height: 50px;
-        width: 50px;
+        height: 65px;
+        width: 65px;
         padding-left: 5px;
     }
 
@@ -326,6 +347,7 @@ main {
 
     .input-group input {
         padding: 10px;
+        padding-bottom: 20px;
         font-size: 13px;
     }
 
@@ -335,7 +357,7 @@ main {
     }
 
     .iconeoakley img {
-        height: 40px;
-        width: 40px;
+        height: 80px;
+        width: 80px;
     }
 }
