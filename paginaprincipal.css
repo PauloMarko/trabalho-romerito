@@ -163,30 +163,30 @@ header {
 }
 
 
+/* Tablet (900px e menor) */
 @media (max-width: 900px) {
-
     #container2 {
         flex-direction: column;
         align-items: center;
         gap: 30px;
+        padding: 20px;
     }
 
-    /* produto */
     #quadrado {
         margin-left: 0;
-        width: 90%;
+        width: 100%;
         max-width: 400px;
+        height: auto;
     }
 
     #lupa {
-        width: 90%;
+        width: 100%;
         height: auto;
         aspect-ratio: 1 / 1;
     }
 
-    /* carrinho */
     #carrinho {
-        width: 90%;
+        width: 100%;
         max-width: 400px;
         height: auto;
         padding: 20px;
@@ -204,27 +204,131 @@ header {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
     header {
         height: auto;
-        padding: 10px 0;
+        padding: 10px;
+    }
+
+    #containertop {
+        padding: 8px;
     }
 
     .iconeoakley img {
-        width: 60px;
+        width: 50px;
     }
 
     .icones {
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
 
     #quadrado {
+        width: 100%;
         height: auto;
-        padding-bottom: 20px;
+        margin: 0;
+        padding: 15px;
+    }
+
+    #lupa {
+        width: 100%;
+        height: 250px;
+    }
+
+    .textoreal {
+        margin: 15px 0;
+    }
+
+    .botão {
+        width: 80%;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #carrinho {
+        width: 100%;
+        margin: 0;
+        padding: 15px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 8px;
+    }
+
+    .iconeoakley img {
+        width: 40px;
+    }
+
+    .icones {
+        width: 28px;
+        height: 28px;
+    }
+
+    #container2 {
+        gap: 15px;
+        padding: 10px;
+    }
+
+    #quadrado {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    #lupa {
+        height: 200px;
+        width: 100%;
     }
 
     #lupa img {
         width: 85%;
+    }
+
+    .textoreal h1 {
+        font-size: 18px;
+    }
+
+    .textoreal h2 {
+        font-size: 16px;
+    }
+
+    .botão {
+        width: 85%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .botãoconfirmar {
+        width: 85%;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    #carrinho {
+        padding: 10px;
+    }
+
+    #meio {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    #quadrado {
+        min-width: 90vw;
+    }
+
+    .botão,
+    .botãoconfirmar {
+        width: 90%;
+        font-size: 11px;
     }
 }

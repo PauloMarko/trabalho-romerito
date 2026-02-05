@@ -1,72 +1,185 @@
-body{
-    background-color: rgb(83, 73, 73);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
-    width: 150vh;
-    height: 70vh;
+body {
+    background-color: rgb(83, 73, 73);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
     background-color: rgb(0, 0, 0);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+    gap: 30px;
 }
 
-.itens{
+.itens {
     background-color: rgb(255, 174, 0);
     color: white;
-    width: 70%;
-    height: 50%;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-}
-
-button{
-    background-color: rgb(255, 255, 255);
-    color: rgb(90, 80, 80);
-    padding: 10px 50px;
-    border-radius: 33px;
-    font-size: 22px;
-    border: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-button:hover{
-    background-color: rgb(133, 127, 120);
-    color: white;
-    cursor: pointer;
-}
-
-p{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 17px;
-}
-
-h1{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.itens2{
-    padding: 20px;
-    height: 360px;
-    width: 300px;
-    color: white;
-    border: 1px solid;
-    position: relative;
-    left:1500px;
-    top: -600px;
-    border-radius: 25px;
-}
-
-.p2{
-    display: flex;
-    justify-content: center;
     text-align: center;
 }
 
-.final{
-    width: 550px;
-    height: 300px;
+button {
+    background-color: rgb(255, 255, 255);
+    color: rgb(90, 80, 80);
+    padding: 12px 30px;
+    border-radius: 33px;
+    font-size: 16px;
+    border: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(133, 127, 120);
+    color: white;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.itens2 {
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.p2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.final {
+    width: 100%;
+    max-width: 550px;
+    min-height: auto;
+    padding: 20px;
+}
+
+/* Tablet (768px e menor) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .itens {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+
+    .itens2 {
+        padding: 15px;
+        max-width: 100%;
+    }
+}
+
+/* Celular (480px e menor) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        gap: 15px;
+        min-height: auto;
+    }
+
+    .itens {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .itens2 {
+        padding: 12px;
+        border-radius: 15px;
+    }
+
+    .final {
+        padding: 15px;
+    }
+}
+
+/* Celular muito pequeno (320px) */
+@media (max-width: 320px) {
+    .container {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
 }

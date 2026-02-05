@@ -35,8 +35,6 @@ header{
 }
 
 
-/* body */
-
 body {
     background-color: rgb(83, 73, 73);
     color: white;
@@ -186,25 +184,35 @@ main {
 
     main {
         justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 
     .container {
         width: 100%;
         margin-top: 20px;
+        max-width: 500px;
     }
 
     #header1 {
         margin-left: 0;
         padding: 0 15px;
+        text-align: center;
     }
 
     .form1 {
         padding-left: 15px;
         padding-right: 15px;
+        max-width: 100%;
+    }
+
+    .form1 form {
+        gap: 12px;
     }
 
     .input-group input {
         width: 100%;
+        padding: 12px;
     }
 
     .input-group span {
@@ -212,30 +220,122 @@ main {
     }
 
     header {
-        height: 70px;
+        height: auto;
         padding: 10px 0;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .iconeoakley img {
         height: 60px;
         width: 60px;
         margin-top: 0;
+        padding-left: 10px;
     }
 
     .checkoutlabel {
         font-size: 18px;
-        padding-top: 12px;
+        padding-top: 0;
     }
 }
 
 @media (max-width: 480px) {
 
+    main {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #header1 {
+        margin-left: 0;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
     #header1 h1 {
         font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .form1 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .form1 form {
+        gap: 10px;
+    }
+
+    .input-group {
+        margin-bottom: 3px;
+    }
+
+    .input-group input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .input-group label {
+        font-size: 13px;
+    }
+
+    #telefone-info {
+        font-size: 11px;
+        margin-top: -12px;
+    }
+
+    #checkbox-uso {
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .btn-concluir {
+        margin-top: 15px;
     }
 
     #btn-finalizar {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    header {
+        height: auto;
+        padding: 8px;
+    }
+
+    .iconeoakley img {
+        height: 50px;
+        width: 50px;
+        padding-left: 5px;
+    }
+
+    .checkoutlabel {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+
+    #header1 h1 {
         font-size: 16px;
-        padding: 14px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #btn-finalizar {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .iconeoakley img {
+        height: 40px;
+        width: 40px;
     }
 }
