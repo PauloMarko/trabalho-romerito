@@ -11,9 +11,6 @@ function validarCampo(e) {
     
     if (!campo.value.trim()) {
         elementoErro.textContent = 'Campo obrigatório';
-        elementoErro.style.color = 'red';
-        elementoErro.style.fontFamily = 'Arial, Helvetica, sans-serif';
-        elementoErro.style.marginBottom = '-10px';
         return false;
     }
     
@@ -123,6 +120,7 @@ function atualizarEstadoBotao() {
     }
 }
 
+// Carrega os dados no formulário
 window.addEventListener('DOMContentLoaded', carregarDados)
 
 inputs.forEach(input => {
@@ -133,8 +131,10 @@ inputs.forEach(input => {
     input.addEventListener('blur', atualizarEstadoBotao);
 });
 
+// Verifica se o checkbox está marcado
 checkboxTermos.addEventListener('change', atualizarEstadoBotao);
 
+// Botão de finalizar a compra
 btnFinalizar.addEventListener('click', () => {
     if (!checkboxTermos.checked) {
         alert('Por favor, aceite os termos para finalizar a compra.');
