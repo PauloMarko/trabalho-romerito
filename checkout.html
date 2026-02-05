@@ -51,32 +51,32 @@
                     <div id="cep" class="input-group">
                         <input type="text" placeholder=" " required>
                         <label for="cep">CEP *</label>
-                        <span id=cep-erro"></span>
+                        <span id="cep-erro"></span>
                     </div>
                     <div id="endereco" class="input-group">
                         <input type="text" placeholder=" " required>
                         <label for="endereco">Endereço *</label>
-                        <span id=endereco-erro"></span>
+                        <span id="endereco-erro"></span>
                     </div>
                     <div id="numero" class="input-group">
                         <input type="text" placeholder="" required> 
                         <label for="numero">Número *</label>
-                        <span id=numero-erro"></span>
+                        <span id="numero-erro"></span>
                     </div>
                     <div id="complemento" class="input-group">
-                        <input type="text" placeholder=" " required>
+                        <input type="text" placeholder=" ">
                         <label for="complemento">Complemento</label>
-                        <span id=complemento-erro"></span>
+                        <span id="complemento-erro"></span>
                     </div>
                     <div id="bairro" class="input-group">
                         <input type="text" placeholder=" " required>
                         <label for="bairro">Bairro *</label>
-                        <span id=bairro-erro"></span>
+                        <span id="bairro-erro"></span>
                     </div>
                     <div id="estado" class="input-group">
                         <input type="text" placeholder=" " required>
                         <label for="estado">Estado *</label>
-                        <span id=bairro-erro"></span>
+                        <span id="estado-erro"></span>
                     </div>
                     <div id="cidade" class="input-group">
                         <input type="text" placeholder="" required>
@@ -84,22 +84,18 @@
                         <span id=cidade-erro"></span>
                     </div>
                     <div id="checkboxes">
-                        <input type="checkbox" name="checkbox1"> Utilizar dados como meu endereço de faturamento
-                        <input type="checkbox" name="checkbox2"> Aceito os <b>Termos e Condições de Uso do site</b>
+                        <div id="checkbox-uso">
+                            <input type="checkbox" id="termos" name="checkbox2"> 
+                            <span>Aceito os <b>Termos e Condições de Uso do site</b></span>
+                        </div>
+                    </div>
+                    <div class="btn-concluir">
+                        <button type="button" id="btn-finalizar" disabled>Concluir</button>
                     </div>
                 </form>
             </div>
         </section>
-        <section class="container2">
-            <div class="itens2">
-                <h3>Total</h3>
-                <span>Subtotal</span>
-                <span id="valor-subtotal"></span>
-                <span>Frete</span> 
-                <span id="valor-frete"></span>   
-                              
-            </div>
-        </section>
     </main>
+    <script src="checkout.js"></script>
 </body>
 </html>

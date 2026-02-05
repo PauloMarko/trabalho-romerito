@@ -1,0 +1,140 @@
+const STORAGE_KEY = 'checkout_dados';
+const inputs = document.querySelectorAll('.input-group input[required]');
+const checkboxTermos = document.getElementById('termos');
+const btnFinalizar = document.getElementById('btn-finalizar');
+
+
+function validarCampo(e) {
+    const campo = e.target;
+    const erroId = `${campo.parentElement.id}-erro`;
+    const elementoErro = document.getElementById(erroId);
+    
+    if (!campo.value.trim()) {
+        elementoErro.textContent = 'Campo obrigatório';
+        elementoErro.style.color = 'red';
+        elementoErro.style.fontFamily = 'Arial, Helvetica, sans-serif';
+        elementoErro.style.marginBottom = '-10px';
+        return false;
+    }
+    
+    return true;
+}
+
+function limparErro(e) {
+    const campo = e.target;
+    const erroId = `${campo.parentElement.id}-erro`;
+    const elementoErro = document.getElementById(erroId);
+    
+    if (elementoErro && campo.value.trim()) {
+        elementoErro.textContent = '';
+    }
+}
+
+function validarTodosCampos() {
+    let todosValidos = true;
+    
+    inputs.forEach(input => {
+        if (!validarCampo({ target: input })) {
+            todosValidos = false;
+        }
+    });
+    
+    return todosValidos;
+}
+
+
+function coletarDados() {
+    return {
+        email: document.querySelector('#email input').value,
+        nome: document.querySelector('#nome input').value,
+        cpf_cnpj: document.querySelector('#cpf input').value,
+        telefone: document.querySelector('#telefone input').value,
+        cep: document.querySelector('#cep input').value,
+        endereco: document.querySelector('#endereco input').value,
+        numero: document.querySelector('#numero input').value,
+        complemento: document.querySelector('#complemento input').value,
+        bairro: document.querySelector('#bairro input').value,
+        estado: document.querySelector('#estado input').value,
+        cidade: document.querySelector('#cidade input').value
+    };
+}
+
+function salvarDados() {
+    const dados = coletarDados();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(dados));
+    console.log('Dados salvos automaticamente');
+}
+
+function preencherFormulario(dados) {
+    document.querySelector('#email input').value = dados.email || '';
+    document.querySelector('#nome input').value = dados.nome || '';
+    document.querySelector('#cpf input').value = dados.cpf_cnpj || '';
+    document.querySelector('#telefone input').value = dados.telefone || '';
+    document.querySelector('#cep input').value = dados.cep || '';
+    document.querySelector('#endereco input').value = dados.endereco || '';
+    document.querySelector('#numero input').value = dados.numero || '';
+    document.querySelector('#complemento input').value = dados.complemento || '';
+    document.querySelector('#bairro input').value = dados.bairro || '';
+    document.querySelector('#estado input').value = dados.estado || '';
+    document.querySelector('#cidade input').value = dados.cidade || '';
+}
+
+function atualizarEstadoBotao() {
+    let todosCamposPreenchidos = true;
+    
+    inputs.forEach(input => {
+        if (!input.value.trim()) {
+            todosCamposPreenchidos = false;
+        }
+    });
+    
+    if (todosCamposPreenchidos && checkboxTermos.checked) {
+        btnFinalizar.disabled = false;
+    } else {
+        btnFinalizar.disabled = true;
+    }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const dadosSalvos = localStorage.getItem(STORAGE_KEY);
+    
+    if (dadosSalvos) {
+        const dados = JSON.parse(dadosSalvos);
+        
+        const usarDados = confirm(
+            'Encontramos dados salvos de uma compra anterior:\n\n' +
+            `Nome: ${dados.nome}\n` +
+            `E-mail: ${dados.email}\n\n` +
+            'Deseja usar esses dados?'
+        );
+        
+        if (usarDados) {
+            preencherFormulario(dados);
+            console.log('Dados anteriores carregados');
+            atualizarEstadoBotao();
+        }
+    }
+});
+
+
+inputs.forEach(input => {
+    input.addEventListener('blur', validarCampo);
+    input.addEventListener('input', limparErro);
+    input.addEventListener('blur', salvarDados);
+    input.addEventListener('input', atualizarEstadoBotao);
+    input.addEventListener('blur', atualizarEstadoBotao);
+});
+
+checkboxTermos.addEventListener('change', () => {
+    if (checkboxTermos.checked) {
+        if (!validarTodosCampos()) {
+            checkboxTermos.checked = false;
+            alert('Por favor, preencha todos os campos obrigatórios antes de aceitar os termos.');
+            return;
+        }
+        
+        salvarDados();
+        alert('Compra concluída com sucesso! Dados salvos.');
+        localStorage.removeItem(STORAGE_KEY);
+    }
+});
