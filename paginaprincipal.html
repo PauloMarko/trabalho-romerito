@@ -1,75 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="pagnaprincipal.css">
+    <title>Loja</title>
+    <link rel="stylesheet" href="paginaprincipal.css">
 </head>
 <body>
-    <header>
-        <div id="containertop">
 
-            <div class="icones">
-                <img src="img/justify-align_3489323.png" alt="">
-            </div>
-
-            <div class="iconeoakley" >
-                <img src="img/pngwing.com.png" alt="">
-            </div>
-
-            <div class="icones">
-                <img src="img/4295.png" alt="">
-            </div>
-
+<header>
+    <div id="containertop">
+        <div class="icones">
+            <img src="img/justify-align_3489323.png">
         </div>
-    </header>
 
-    <main id="igao">
-        <div id="container2">
-            <div id="quadrado">
-                <div class="texto">
-                    <div id="lupa">
-                        <img src="img/plantaris12.jpg" alt="">
-                    </div>
-                    <div class="textoreal">
-                        <h1>Plantaris</h1>
-                        <h2>R$2999.99</h2>
-                        <H5 class="limitado">item limitado</H5>
-                    </div>
+        <div class="iconeoakley">
+            <img src="img/pngwing.com.png">
+        </div>
+
+        <div class="icones">
+            <img src="img/4295.png">
+        </div>
+    </div>
+</header>
+
+<main>
+    <div id="container2">
+
+        <div id="quadrado">
+            <div class="texto">
+                <div id="lupa">
+                    <img src="img/plantaris12.jpg">
                 </div>
-                <div class="botão">
-                    <h1>adicionar ao carrinho</h1>
+                <div class="textoreal">
+                    <h1>Plantaris</h1>
+                    <h2>R$ 2999.99</h2>
+                    <h5 class="limitado">item limitado</h5>
                 </div>
             </div>
-            <div id="quadrado">
-                <div class="texto">
-                    <div id="lupa">
-                        <img src="img/plantaris13.jpg" alt="">
-                    </div>
-                    <div class="textoreal">
-                        <h1>Plantaris</h1>
-                        <h2>R$2999.99</h2>
-                        <H5 class="limitado">item limitado</H5>
-                    </div>
-                </div>
-
-            </div>
-            <div id="quadrado">
-                <div class="texto">
-                    <div id="lupa">
-                        <img src="img/plantaris12.jpg" alt="">
-                    </div>
-                    <div class="textoreal">
-                        <h1>Plantaris</h1>
-                        <h2>R$2999.99</h2>
-                        <H5 class="limitado">item limitado</H5>
-                    </div>
-                </div>
-
+            <div class="botão" onclick="adicionarCarrinho('Plantaris', 2999.99)">
+                adicionar ao carrinho
             </div>
         </div>
 
-    </main>
+
+
+        
+            <div id="carrinho">
+                <div id="meio"">
+                <h2>Carrinho</h2>
+                    <div id="itens-carrinho"></div>
+                    <div id="total">
+                    Total: R$ <span id="valor-total">0.00</span>
+                </div>
+                <div class="botãoconfirmar" >
+                COMPRAR
+            </div>
+            </div>
+            </div>
+
+<script src="carrinho.js"></script>
+
+
+
+    </div>
+</main>
+
+
 </body>
 </html>
