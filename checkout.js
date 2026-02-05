@@ -65,6 +65,34 @@ function salvarDados() {
     console.log('Dados salvos automaticamente');
 }
 
+function carregarDados() {
+    const dadosSalvos = localStorage.getItem(STORAGE_KEY);
+    
+    if (dadosSalvos) {
+        const dados = JSON.parse(dadosSalvos);
+        const dadosValidos = dados.nome && dados.nome.trim() &&
+                             dados.email && dados.email.trim();
+        
+        if (dadosValidos) {
+            const usarDados = confirm(
+                'Encontramos seus dados de sua compra anterior:\n\n' +
+                `Nome: ${dados.nome}\n` +
+                `E-mail: ${dados.email}\n\n` +
+                'Deseja usar seus dados?'
+            );
+            
+            if (usarDados) {
+                preencherFormulario(dados);
+                console.log('Dados anteriores carregados');
+                atualizarEstadoBotao();
+            }
+        } else {
+            localStorage.removeItem(STORAGE_KEY);
+            console.log('Dados salvos vazios e foram removidos');
+        }
+    }
+}
+
 function preencherFormulario(dados) {
     document.querySelector('#email input').value = dados.email || '';
     document.querySelector('#nome input').value = dados.nome || '';
@@ -95,27 +123,7 @@ function atualizarEstadoBotao() {
     }
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    const dadosSalvos = localStorage.getItem(STORAGE_KEY);
-    
-    if (dadosSalvos) {
-        const dados = JSON.parse(dadosSalvos);
-        
-        const usarDados = confirm(
-            'Encontramos dados salvos de uma compra anterior:\n\n' +
-            `Nome: ${dados.nome}\n` +
-            `E-mail: ${dados.email}\n\n` +
-            'Deseja usar esses dados?'
-        );
-        
-        if (usarDados) {
-            preencherFormulario(dados);
-            console.log('Dados anteriores carregados');
-            atualizarEstadoBotao();
-        }
-    }
-});
-
+window.addEventListener('DOMContentLoaded', carregarDados)
 
 inputs.forEach(input => {
     input.addEventListener('blur', validarCampo);
@@ -125,16 +133,21 @@ inputs.forEach(input => {
     input.addEventListener('blur', atualizarEstadoBotao);
 });
 
-checkboxTermos.addEventListener('change', () => {
-    if (checkboxTermos.checked) {
-        if (!validarTodosCampos()) {
-            checkboxTermos.checked = false;
-            alert('Por favor, preencha todos os campos obrigatórios antes de aceitar os termos.');
-            return;
-        }
-        
-        salvarDados();
-        alert('Compra concluída com sucesso! Dados salvos.');
-        localStorage.removeItem(STORAGE_KEY);
+checkboxTermos.addEventListener('change', atualizarEstadoBotao);
+
+btnFinalizar.addEventListener('click', () => {
+    if (!checkboxTermos.checked) {
+        alert('Por favor, aceite os termos para finalizar a compra.');
+        return;
     }
+
+    if (!validarTodosCampos()) {
+        checkboxTermos.checked = false;
+        alert('Por favor, preencha todos os campos obrigatórios antes de aceitar os termos.');
+        return;
+    }
+
+    salvarDados();
+    alert('Compra concluída com sucesso!');
+    window.location.href = "paginaprincipal.html";
 });
