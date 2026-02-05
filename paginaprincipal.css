@@ -161,3 +161,70 @@ header {
     background-color: #ffffff;
     justify-content: space-evenly;
 }
+
+
+@media (max-width: 900px) {
+
+    #container2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* produto */
+    #quadrado {
+        margin-left: 0;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    #lupa {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* carrinho */
+    #carrinho {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+        padding: 20px;
+    }
+
+    #meio {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .botão,
+    .botãoconfirmar {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .iconeoakley img {
+        width: 60px;
+    }
+
+    .icones {
+        width: 30px;
+        height: 30px;
+    }
+
+    #quadrado {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    #lupa img {
+        width: 85%;
+    }
+}
